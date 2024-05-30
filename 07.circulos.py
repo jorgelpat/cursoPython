@@ -6,5 +6,5 @@ import math
 radio = float(input("Indique el radio del circulo en cm:\n"))
 area = math.pi*((radio)**2)
 perimetro = 2*(math.pi)*radio
-print(f"El area del ciruclo es {area}cm cuadrados")
-print(f"El perimetro del circulo es {perimetro}cm")
+print(f"El area del ciruclo es {round(area,2)}cm cuadrados")
+print(f"El perimetro del circulo es {round(perimetro,2)}cm")
