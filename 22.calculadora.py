@@ -41,5 +41,3 @@ def operacion(x,y,z):
         return x/z
     
 print(f"{operando1} {operator} {operando2} = {operacion(int(operando1),operator,int(operando2))}")
-
-# Solucionar problema
