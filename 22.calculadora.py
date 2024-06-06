@@ -8,11 +8,18 @@ while operando1.isdigit() == False:
 
 operator = input("Operador: ")
 
-while operator != "+" or operator != "-" or operator != "*" or operator != "/":
-        print(f"{operator} no es un operador básico, vuelve a intentarlo: ")
+while True:
+    if operator == "+":
+        break
+    elif operator == "-":
+        break
+    elif operator == "*":
+        break
+    elif operator == "/":
+        break
+    else:
+        print("No es un operador básico, intente de nuevo")
         operator = input("Operador: ")
-        if operator == "+" or operator == "-" or operator == "*" or operator == "/":
-             break
 
 
 operando2 = input("Operando: ")
@@ -33,6 +40,6 @@ def operacion(x,y,z):
     else:
         return x/z
     
-print(f"{operando1} {operator} {operando2} = {operacion(operando1,operator,operando2)}")
+print(f"{operando1} {operator} {operando2} = {operacion(int(operando1),operator,int(operando2))}")
 
 # Solucionar problema
