@@ -1,24 +1,20 @@
 import time
+from datetime import datetime
 
 print("Ingrese su fecha de Nacimiento: ")
 dia = input("Dia: ")
 mes = input("Mes: ")
 anno = input("Año: ")
 
+fechaNac = f"{anno}-{mes}-{dia}"
+
 def calcularEdad(fechaNac):
-    fechaActual = time.localtime()
-    annoActual = fechaActual.tm_year
-    mesActual = fechaActual.tm_mon
-    diaActual = fechaActual.tm_mday
-
-    dia, mes, anno = fechaNac
-
-    edad = annoActual - anno
-
+    fechaNac = datetime.strptime(fechaNac,"%Y-%m-%d")
+    fechaActual = datetime.now()
+    edad = fechaActual.year - fechaNac.year
+    if (fechaActual.month, fechaActual.day) < (fechaNac.month, fechaNac.day):
+        edad -= 1
     return edad
 
-fechaNac = (dia, mes, anno)
-
-edad = calcularEdad()
-
-print(f"La persona tiene {edad} años")
+edad = calcularEdad(fechaNac)
+print(f"Usted tiene {edad} años")
